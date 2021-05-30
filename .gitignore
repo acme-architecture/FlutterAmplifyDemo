@@ -1,3 +1,8 @@
+# Prevent upload keyfile properties to Public
+key.properties
+
+# prevent _temp_
+*_temp_*/
 # Miscellaneous
 *.class
 *.log
