@@ -16,6 +16,13 @@ flutter upgrade
 * For `amplify_pinpoint` require at least `Android 5.0 (API level 21)`. [release_platforms](https://developer.android.com/studio/releases/platforms)
 
 
+# Dependencies
+
+npm install dynamodb-local --save-dev
+
+
+
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
