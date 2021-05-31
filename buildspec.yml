@@ -1,0 +1,29 @@
+version: 0.2
+phases:
+  install:
+    runtime-versions:
+      android: 29
+      java: openjdk8
+    commands:
+      - pwd
+  pre_build:
+    commands:
+      - echo Pre Build started on `date`
+      - git clone https://github.com/flutter/flutter.git -b beta
+      - export PATH="$PATH:`pwd`/flutter/bin"
+      - flutter precache
+      - flutter doctor
+  build:
+    commands:
+      - cd helloworld
+      - pwd
+      - ls -al
+      - echo Build started on `date`
+      - flutter build apk
+  post_build:
+    commands:
+      - echo Build completed on `date`
+artifacts:
+  files:
+    - build/app/outputs/flutter-apk/app-release.apk
+  discard-paths: yes
