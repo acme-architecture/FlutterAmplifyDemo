@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:amplify_flutter/amplify.dart';
 import 'package:amplify_auth_cognito/amplify_auth_cognito.dart';
 import 'package:flutter_login/flutter_login.dart';
+import 'package:flutter_login/theme.dart';
 
 class Login extends StatefulWidget {
   @override
@@ -64,7 +65,7 @@ class _LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
     return FlutterLogin(
-      title: 'Welcome',
+      title: 'สวัสดี',
       onLogin: _onLogin,
       onRecoverPassword: (String email) => _onRecoverPassword(context, email),
       onSignup: _onSignup,
@@ -77,6 +78,10 @@ class _LoginState extends State<Login> {
           arguments: _data,
         );
       },
+      messages: LoginMessages(
+        loginButton: "เข้าสู่ระบบ",
+        signupButton: "ลงทะเบียน"
+      ),
     );
   }
 }
